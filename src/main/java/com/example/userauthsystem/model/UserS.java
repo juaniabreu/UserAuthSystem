@@ -21,10 +21,10 @@ public class UserS {
     private String username;
     private String password;
     private String email;
-    private boolean enabled;
-    private boolean accountNotExpired;
-    private boolean credentialNotExpired;
-    private boolean accountNotLocked;
+    private boolean enabled=true;
+    private boolean accountNotExpired=true;
+    private boolean credentialNotExpired=true;
+    private boolean accountNotLocked=true;
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"),inverseJoinColumns = @JoinColumn(name = "role_id"))

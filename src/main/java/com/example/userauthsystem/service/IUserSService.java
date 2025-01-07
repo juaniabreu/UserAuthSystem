@@ -13,6 +13,7 @@ public interface IUserSService {
     public UserS save(UserS userSec);
     public void deleteById(Long id);
     public void update(UserS userSec);
+    public String encriptPassword(String password);
 
 }
 

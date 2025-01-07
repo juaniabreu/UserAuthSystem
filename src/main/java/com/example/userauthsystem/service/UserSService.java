@@ -3,6 +3,7 @@ package com.example.userauthsystem.service;
 import com.example.userauthsystem.model.UserS;
 import com.example.userauthsystem.repository.IUserSRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -38,5 +39,10 @@ public class UserSService implements IUserSService {
     @Override
     public void update(UserS userSec) {
         save(userSec);
+    }
+
+    @Override
+    public String encriptPassword(String password) {
+        return new BCryptPasswordEncoder().encode(password);
     }
 }
